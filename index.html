@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma Bomb Scents | Premium Car Fragrance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #ffffff; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        
+        .vanilla-green { color: #84cc16; } 
+        .musk-pink { color: #d946ef; }
+        .bg-vanilla { background-color: #84cc16; }
+        .bg-musk { background-color: #d946ef; }
+
+        html { scroll-behavior: smooth; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease forwards; }
+        
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto relative z-[100]">
+        <div class="flex items-center">
+            <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/aromabomb/img/1778085775682.png" alt="Aroma Bomb Logo" class="h-16 w-auto">
+        </div>
+        <button onclick="toggleCart()" class="relative p-2 group bg-zinc-900 rounded-full border border-zinc-800">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 11h14l1 12H4l1-12z" />
+            </svg>
+            <span id="cart-count" class="absolute -top-1 -right-1 bg-white text-black text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+        </button>
+    </nav>
+
+    <section class="relative h-[80vh] flex items-center justify-center overflow-hidden mx-6 rounded-[2.5rem] mt-2 border border-zinc-900 shadow-2xl">
+        <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/aromabomb/img/1778085775682.png" class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Interior View">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+        <div class="relative z-10 text-center px-6">
+            <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/aromabomb/img/1778085775682.png" alt="Aroma Bomb" class="h-48 md:h-64 mx-auto mb-4 animate-fade-in">
+            <h2 class="text-4xl md:text-7xl font-bold mb-6 tracking-tighter uppercase italic">
+                Aroma <span class="vanilla-green">Bomb</span>
+            </h2>
+            <p class="text-gray-300 mb-8 max-w-md mx-auto text-sm md:text-base tracking-wide">Premium car fragrance cards that last up to 25 days. Designed for the drive.</p>
+            <a href="#shop" class="bg-white text-black px-12 py-4 font-bold rounded-full hover:bg-lime-500 transition uppercase tracking-widest text-sm shadow-xl">Shop the Collection</a>
+        </div>
+    </section>
+
+    <section id="shop" class="max-w-6xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 relative z-20">
+        
+        <div class="glass p-6 rounded-[3rem] group border-lime-500/10 hover:border-lime-500/40 transition duration-500">
+            <div onclick="openProduct('Vanilla Bomb')" class="h-[500px] bg-zinc-900 rounded-[2.5rem] mb-6 overflow-hidden cursor-pointer shadow-2xl">
+                <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/aromabomb/img/IMG-20260506-WA0459(1).jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-1000" alt="Vanilla Bomb">
+            </div>
+            <div class="flex justify-between items-center px-2">
+                <div onclick="openProduct('Vanilla Bomb')" class="cursor-pointer">
+                    <h3 class="text-3xl font-bold tracking-tighter italic uppercase">Vanilla <span class="vanilla-green">Bomb</span></h3>
+                    <p class="text-gray-500 text-[10px] uppercase tracking-[0.2em] mt-1 font-bold">Sweet • Spicy • Amber</p>
+                </div>
+                <div class="text-right">
+                    <span class="text-2xl font-bold text-white block">R149</span>
+                    <button onclick="addToCart('Vanilla Bomb', 149)" class="text-[10px] uppercase font-bold tracking-widest mt-2 bg-lime-500 text-black px-5 py-2 rounded-full hover:bg-white transition">Add +</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass p-6 rounded-[3rem] group border-fuchsia-500/10 hover:border-fuchsia-500/40 transition duration-500">
+            <div onclick="openProduct('Musk Bomb')" class="h-[500px] bg-zinc-900 rounded-[2.5rem] mb-6 overflow-hidden cursor-pointer shadow-2xl">
+                <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/aromabomb/img/IMG-20260506-WA0461(1)(1).jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-1000" alt="Musk Bomb">
+            </div>
+            <div class="flex justify-between items-center px-2">
+                <div onclick="openProduct('Musk Bomb')" class="cursor-pointer">
+                    <h3 class="text-3xl font-bold tracking-tighter italic uppercase">Musk <span class="musk-pink">Bomb</span></h3>
+                    <p class="text-gray-500 text-[10px] uppercase tracking-[0.2em] mt-1 font-bold">Musky • Floral • Powdery</p>
+                </div>
+                <div class="text-right">
+                    <span class="text-2xl font-bold text-white block">R149</span>
+                    <button onclick="addToCart('Musk Bomb', 149)" class="text-[10px] uppercase font-bold tracking-widest mt-2 bg-fuchsia-500 text-black px-5 py-2 rounded-full hover:bg-white transition">Add +</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="product-modal" class="fixed inset-0 bg-black/98 z-[300] hidden flex items-center justify-center p-4 backdrop-blur-2xl">
+        <div class="glass max-w-5xl w-full max-h-[95vh] overflow-y-auto rounded-[3rem] p-8 md:p-12 relative border-white/5">
+            <button onclick="closeProduct()" class="absolute top-8 right-8 text-white text-3xl hover:text-red-500 transition-colors">✕</button>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-4">
+                    <img id="modal-img-use" src="" class="w-full rounded-[2rem] border border-zinc-800 shadow-2xl" alt="Instructions">
+                    <div class="flex justify-between p-4 bg-zinc-900/50 rounded-2xl border border-zinc-800">
+                        <div class="text-center w-1/2 border-r border-zinc-800"><p class="text-[9px] uppercase font-bold text-gray-500">Longevity</p><p class="text-lg font-bold">25 Days</p></div>
+                        <div class="text-center w-1/2"><p class="text-[9px] uppercase font-bold text-gray-500">Versatility</p><p class="text-lg font-bold">3-in-1 Use</p></div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h2 id="modal-title" class="text-5xl font-bold mb-4 tracking-tighter italic uppercase"></h2>
+                    <p id="modal-desc" class="text-gray-400 text-lg leading-relaxed mb-8 font-light"></p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div>
+                            <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-white mb-3">Placement Guide:</h4>
+                            <div class="flex gap-2">
+                                <span class="bg-zinc-800 text-[10px] px-3 py-1 rounded-full text-gray-300 border border-zinc-700">Rearview Mirror</span>
+                                <span class="bg-zinc-800 text-[10px] px-3 py-1 rounded-full text-gray-300 border border-zinc-700">AC Vent Clip</span>
+                                <span class="bg-zinc-800 text-[10px] px-3 py-1 rounded-full text-gray-300 border border-zinc-700">Wardrobes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="modal-add-btn" class="w-full py-5 bg-white text-black font-bold rounded-2xl uppercase tracking-widest hover:scale-[1.02] active:scale-95 transition-all shadow-xl">Add to Basket — R149</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full md:w-96 bg-[#0a0a0a] shadow-2xl transform translate-x-full transition-transform duration-500 z-[400] p-8 flex flex-col border-l border-zinc-900">
+        <div class="flex justify-between items-center mb-10">
+            <h2 class="text-xl font-bold uppercase tracking-widest italic">The Basket</h2>
+            <button onclick="toggleCart()" class="text-gray-500 hover:text-white font-bold uppercase text-[10px] tracking-widest">Close</button>
+        </div>
+        <div id="cart-items" class="flex-grow space-y-4 overflow-y-auto pr-2"></div>
+        <div class="border-t border-zinc-900 pt-6 mt-6">
+            <div class="flex justify-between text-xl mb-8 font-bold uppercase italic">
+                <span>Total</span>
+                <span id="cart-total" class="vanilla-green">R0.00</span>
+            </div>
+            <button onclick="alert('Proceeding to secure checkout...')" class="w-full py-5 bg-white text-black font-bold uppercase tracking-widest rounded-2xl hover:bg-lime-500 transition shadow-xl">Checkout Now</button>
+        </div>
+    </div>
+
+    <footer class="border-t border-zinc-900 pt-20 pb-10 bg-black text-center relative z-[100]">
+        <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/aromabomb/img/1778085775682.png" alt="Logo" class="h-20 mx-auto mb-8">
+        <div class="max-w-2xl mx-auto px-6 mb-12">
+            <p class="text-gray-500 text-sm italic font-light">Experience the ultimate scent explosion. Hand-poured for car, home, and office use.</p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+                <div class="p-3 border border-zinc-900 rounded-xl">info@aromabombscents.co.za</div>
+                <div class="p-3 border border-zinc-900 rounded-xl">060 438 6022</div>
+            </div>
+        </div>
+        <p class="text-[9px] uppercase tracking-[0.4em] text-gray-800 italic mt-10">
+            Designed & Developed by <span class="text-white">Joshua Sheldon Naidoo</span>
+        </p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        const productData = {
+            'Vanilla Bomb': {
+                desc: 'A heavy-hitting sweet explosion. Featuring rich notes of vanilla, amber, and warm spices, this bomb is designed to create a cozy yet powerful atmosphere in your vehicle.',
+                useImg: 'file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/aromabomb/img/IMG-20260506-WA0464.jpg',
+                color: '#84cc16'
+            },
+            'Musk Bomb': {
+                desc: 'Deep, mysterious, and incredibly fresh. A complex blend of musk and white florals that leaves a sophisticated, powdery trail wherever you go.',
+                useImg: 'file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/aromabomb/img/IMG-20260506-WA0463.jpg',
+                color: '#d946ef'
+            }
+        };
+
+        function toggleCart(forceOpen = false) {
+            const drawer = document.getElementById('cart-drawer');
+            if (forceOpen) drawer.classList.remove('translate-x-full');
+            else drawer.classList.toggle('translate-x-full');
+        }
+
+        function openProduct(name) {
+            const data = productData[name];
+            document.getElementById('modal-title').innerText = name;
+            document.getElementById('modal-desc').innerText = data.desc;
+            document.getElementById('modal-img-use').src = data.useImg;
+            
+            const btn = document.getElementById('modal-add-btn');
+            btn.style.backgroundColor = data.color;
+            btn.style.color = (name === 'Musk Bomb') ? 'white' : 'black';
+            btn.onclick = () => { addToCart(name, 149); closeProduct(); };
+            
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function closeProduct() { document.getElementById('product-modal').classList.add('hidden'); }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+            toggleCart(true);
+        }
+
+        function changeQty(name, delta) {
+            if (delta === 1) {
+                const item = cart.find(i => i.name === name);
+                cart.push({ name: item.name, price: item.price });
+            } else {
+                const index = cart.findIndex(i => i.name === name);
+                if (index !== -1) cart.splice(index, 1);
+            }
+            updateCart();
+        }
+
+        function updateCart() {
+            const container = document.getElementById('cart-items');
+            const totalEl = document.getElementById('cart-total');
+            const countEl = document.getElementById('cart-count');
+            container.innerHTML = '';
+            let total = 0;
+
+            const groupedCart = cart.reduce((acc, item) => {
+                if (!acc[item.name]) acc[item.name] = { ...item, qty: 0 };
+                acc[item.name].qty += 1;
+                return acc;
+            }, {});
+
+            Object.values(groupedCart).forEach((item) => {
+                const itemTotal = item.price * item.qty;
+                total += itemTotal;
+                const accent = item.name === 'Vanilla Bomb' ? 'vanilla-green' : 'musk-pink';
+                container.innerHTML += `
+                    <div class="flex justify-between items-center glass p-5 rounded-[1.5rem] animate-fade-in">
+                        <div>
+                            <p class="font-bold uppercase text-[10px] tracking-widest italic">${item.name}</p>
+                            <p class="${accent} text-[10px] font-bold">R${itemTotal}</p>
+                        </div>
+                        <div class="flex items-center space-x-3 bg-black rounded-xl px-2 py-1 border border-zinc-800">
+                            <button onclick="changeQty('${item.name}', -1)" class="text-white hover:text-red-500 px-2 font-bold">-</button>
+                            <span class="text-xs font-bold w-4 text-center">${item.qty}</span>
+                            <button onclick="changeQty('${item.name}', 1)" class="text-white hover:text-green-500 px-2 font-bold">+</button>
+                        </div>
+                    </div>`;
+            });
+
+            totalEl.innerText = `R${total}.00`;
+            countEl.innerText = cart.length;
+        }
+    </script>
+</body>
+</html>
